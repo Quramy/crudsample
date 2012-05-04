@@ -2,5 +2,9 @@ h1= title
 div
 	p Welcome to #{title}
 	div 
-		p #{message}
-
+		span= arr[0]+'_item'
+		ul
+			each item in arr 
+				li= item
+	div#viz.visualize
+script(type='text/javascript', src='javascripts/viz.js')

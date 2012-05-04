@@ -4,5 +4,17 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Hello, world' , message:'hogehogehoge'})
+	var getArr=function(){
+		return ['hoge', 'foo', 'bar', 'biz'];
+	};
+
+	var arr=getArr();
+
+  res.render('index', { 
+		title: 'Hello, world',
+	 	message:'hogehogehoge',
+		arr: arr
+	});
 };
+
+exports.version = require('./version');
