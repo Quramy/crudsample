@@ -44,7 +44,7 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/', routes.index);
+app.get('/', routes.book.index);
 app.get('/version', routes.version.index);
 app.get('/version/json', routes.version.asJson);
 

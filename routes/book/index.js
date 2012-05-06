@@ -45,7 +45,6 @@ exports.asJson = function(req, res){
 };
 
 exports.create = function(req, res){
-	//console.log(req.body.author);
 	var BookSchema = mongoose.model('book');
 	var book = new BookSchema();
 	book.author = req.body.author;

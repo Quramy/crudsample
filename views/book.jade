@@ -7,6 +7,8 @@ div#main
 				tr
 					th= 'author'
 					th= 'title'
+					th= 'edit'
+					th= 'delete'
 			tbody
 				each book in books
 					tr
@@ -19,15 +21,19 @@ div#main
 	div
 		form#frm_edit
 			input#new_id.book_id(type='hidden')
-			label= 'author: '
-			input#new_author(type='text')
-			br
-			label= 'title: '
-			input#new_title(type='text')
-			br
-			label= 'description: '
-			textarea#new_desc
-			br
+			table.noborder
+				tr
+					td= 'author: '
+					td
+						input#new_author(type='text')
+				tr
+					td= 'title: '
+					td
+						input#new_title(type='text')
+				tr
+					td= 'description: '
+					td
+						textarea#new_desc
 			button#btn_post= 'post'
 			button#btn_update= 'update'
 div#footer
