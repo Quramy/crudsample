@@ -1,8 +1,8 @@
 var data = [
-	{title: 'hogehoge', author: 'yosuke kurami'},
-	{title: 'foo', author: 'yosuke kurami'},
-	{title: 'bar', author: 'yosuke kurami'},
-	{title: '謎の本', author: 'yosuke kurami'}
+	{title: 'hogehoge', author: 'yosuke kurami', description:'this is hoge book!'},
+	{title: 'foo', author: 'yosuke kurami', description:'this is hoge book!'},
+	{title: 'bar', author: 'yosuke kurami', description:'this is hoge book!'},
+	{title: 'hoge2', author: 'yosuke kurami', description:'this is hoge book!'},
 ];
 
 db.books.drop();

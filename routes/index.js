@@ -18,3 +18,4 @@ exports.index = function(req, res){
 };
 
 exports.version = require('./version');
+exports.book = require('./book');

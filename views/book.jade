@@ -1,0 +1,34 @@
+div#header
+	h1= title
+div#main
+	div
+		table#booklist
+			thead
+				tr
+					th= 'author'
+					th= 'title'
+			tbody
+				each book in books
+					tr
+						td= book.author
+						td= book.title
+						td
+							button.editBook(book_id= book._id)= 'edit'
+						td
+							button.deleteBook(book_id= book._id)= 'delete'
+	div
+		form#frm_edit
+			input#new_id.book_id(type='hidden')
+			label= 'author: '
+			input#new_author(type='text')
+			br
+			label= 'title: '
+			input#new_title(type='text')
+			br
+			label= 'description: '
+			textarea#new_desc
+			br
+			button#btn_post= 'post'
+			button#btn_update= 'update'
+div#footer
+script(type='text/javascript', src='/javascripts/book.js')

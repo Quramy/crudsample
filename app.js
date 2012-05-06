@@ -12,12 +12,14 @@ var app = module.exports = express.createServer();
 
 //mongodb settings
 var mongoUri = process.env.MONGOHQ_URL || 'mongodb://localhost/sampledb';
-console.log(mongoUri);
+//console.log(mongoUri);
 var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
 var BookSchema= new Schema({
 	title: String,
-	author: String
+	author: String,
+	description: String
 });
+
 
 // Configuration
 app.configure(function(){
@@ -40,38 +42,18 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-
-
-
-
 // Routes
 
 app.get('/', routes.index);
 app.get('/version', routes.version.index);
 app.get('/version/json', routes.version.asJson);
 
-app.get('/sample', function(req, res){
-	var BookSchema = mongoose.model('book');
-	BookSchema.find({}, function(err, docs){
-		if(!err){
-			res.json(docs);
-		}
-	});
-});
-
-app.get('/sample/post', function(req, res){
-	var BookSchema = mongoose.model('book');
-	var book = new BookSchema;
-	book.title = 'HOGE';
-	book.author = 'YOSUKE';
-	book.save(function(err){
-		if(!err){
-			res.end('success!');
-		}else{
-			res.send(err);
-		}
-	});
-});
+app.get('/book', routes.book.index);
+app.get('/book/json', routes.book.asJson);
+app.get('/book/:id', routes.book.findById);
+app.put('/book/:id', routes.book.update);
+app.delete('/book/:id', routes.book.delete);
+app.post('/book', routes.book.create);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
