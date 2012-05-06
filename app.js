@@ -12,6 +12,7 @@ var app = module.exports = express.createServer();
 
 //mongodb settings
 var mongoUri = process.env.MONGOHQ_URL || 'mongodb://localhost/sampledb';
+console.log(mongoUri);
 var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
 var BookSchema= new Schema({
 	title: String,
