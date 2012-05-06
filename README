@@ -1,2 +1,10 @@
 This is a sample application of Node.
-It's functions is CRUD of a 'BOOK' data on mongodb.
+It provides RESTful CRUD functions of 'BOOK' data on mongodb.
+
+METHOD:URI:expression
+GET		:	/ - index.page
+GET	  : /book/:id get one book data whose has id.
+PUT   : /book/:id update one book data whose has id.
+DELETE: /book/:id update one book data whose has id.
+POST 	: /book :create new book data.
+
